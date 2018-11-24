@@ -7,8 +7,9 @@ import styles from './button.module.scss';
 function Button(props) {
   const {
     onClick,
-    type,
-    children
+    variant,
+    children,
+    type
   } = props;
 
   return (
@@ -16,10 +17,11 @@ function Button(props) {
       className={
         classnames(
           styles.button,
-          styles[type],
+          styles[variant],
         )
       }
       onClick={onClick}
+      type={type}
     >
       { children }
     </button>
@@ -29,10 +31,12 @@ function Button(props) {
 Button.propTypes = {
   type: PropTypes.string,
   onClick: PropTypes.func,
+  variant: PropTypes.string,
 };
 
 Button.defaultProps = {
-  type: 'action',
+  type: 'button',
+  variant: 'action',
 };
 
 export default Button;

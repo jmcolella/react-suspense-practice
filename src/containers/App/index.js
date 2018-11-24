@@ -4,28 +4,35 @@ import styles from './app.module.scss';
 import Repositories from '../../components/Repositories';
 import Loading from '../../components/Loading';
 import Button from '../../components/Button';
+import UsernameForm from '../UsernameForm';
 
 function App() {
-  const [showRepos, setShowRepos] = useState(false);
+  const [username, setUsername] = useState('');
 
   return (
     <div className={styles.container}>
       {
-        showRepos ?
+        username ?
         <div className={styles['repos-container']}>
           <Suspense
-            fallback={
-              <Loading />
-            }
+            fallback={<Loading />}
           >
-            <Repositories />
+            <div className={styles['repos-wrapper']}>
+              <Repositories username={username} />
+            </div>
+
+            <div className={styles.button}>
+              <Button onClick={() => setUsername('')}>
+                go back
+              </Button>
+            </div>
           </Suspense>
         </div>
         :
-        <div className={styles['button-container']}>
-          <Button onClick={() => setShowRepos(!showRepos)}>
-            get your github repos
-          </Button>
+        <div className={styles.form}>
+          <UsernameForm
+            setUsername={setUsername}
+          />
         </div>
       }
     </div>

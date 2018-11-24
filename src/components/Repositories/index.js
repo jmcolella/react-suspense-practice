@@ -1,17 +1,24 @@
 import React from 'react';
 import { unstable_createResource } from 'react-cache';
-import { getMyRepos } from '../../util/githubRequests';
+import { getMyRepos, getUserRepos } from '../../util/githubRequests';
 
 import styles from './repositories.module.scss';
 
-const reposResource = unstable_createResource(getMyRepos);
+const reposResource = unstable_createResource((username) => getUserRepos(username));
 
+function Repositories(props) {
+  const { username } = props;
 
-function Repositories() {
+  const repos = reposResource.read(username);
+
+  if (!repos) {
+    return <p>no repos found for that user, try again.</p>
+  }
+
   return (
     <div className={styles.container}>
       {
-        reposResource.read().map((repo, idx) => (
+        repos.map((repo, idx) => (
           <p key={idx} className={styles.repo}>{repo.name}</p>
         ))
       }

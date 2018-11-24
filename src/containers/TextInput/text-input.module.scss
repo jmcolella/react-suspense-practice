@@ -1,0 +1,18 @@
+.input {
+  border-style: none;
+  border-radius: 5px;
+  box-shadow: 0px 1px 10px 2px $secondary-purple;
+  color: $secondary-purple;
+
+  font-size: 16px;
+  padding: 12px 24px;
+  width: 100%;
+
+  &::placeholder {
+    color: $secondary-purple;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}

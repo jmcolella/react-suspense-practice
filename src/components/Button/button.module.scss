@@ -8,13 +8,13 @@
   width: 100%;
 
   &:hover {
-    box-shadow: 0px 1px 10px 2px #4F517D;
+    box-shadow: 0px 1px 10px 2px $secondary-purple;
     transition: 0.25s ease;
   }
 }
 
 .action {
-  background-color: #EFFFFA;
-  border: 1px solid #EFFFFA;
-  color: #8A4FFF;
+  background-color: $mint;
+  border: 1px solid $mint;
+  color: $primary-purple;
 }
