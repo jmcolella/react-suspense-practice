@@ -6,6 +6,6 @@ With all of the new fun React updates, such as Suspense and Hooks, I wanted to p
 
 # Setup
 1. `yarn install`
-2. Generate a Github Personal Access Token [here](https://github.com/settings/tokens) and add to your environment as `GITHUB_TOKEN`
+2. Generate a Github Personal Access Token [here](https://github.com/settings/tokens) and add to your environment as `REACT_SUSPENSE_GITHUB_TOKEN`
 3. `yarn start`
 4. Navigate to `http://localhost:8080`
