@@ -13,7 +13,7 @@ const config = fannypack.devConfig({
 module.exports = {
   ...config,
   entry: {
-    'suspense-beer': [
+    'suspense-github': [
       'babel-polyfill',
       path.resolve('./src/index.js'),
     ]
