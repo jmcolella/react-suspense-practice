@@ -1,0 +1,28 @@
+.container {
+  background-color: #8A4FFF;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 1280px;
+  min-height: 100vh;
+}
+
+.repos-container {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 24px;
+  width: 100%;
+}
+
+.button-container {
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 769px) {
+  .repos-container {
+    width: 50%
+  }
+}
